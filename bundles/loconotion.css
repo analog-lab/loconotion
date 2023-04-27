@@ -14,13 +14,30 @@ div[role="button"]:not(.notion-record-icon):hover {
 }
 
 /* stops inline databases from overflowing horizontally */
-.notion-frame {
-  max-width: 100%;
-  width: 100vw !important;
+@media (min-width: 600px) {
+  .notion-frame {
+    max-width: 100%;
+    width: 100vw !important;
+    padding-left: calc(96px + env(safe-area-inset-left));
+    padding-right: calc(96px + env(safe-area-inset-right));
+  }
+}
+
+/* 600px 미만일 경우 */
+@media (max-width: 599px) {
+  .notion-frame {
+    max-width: 100%;
+    width: 100vw !important;
+    padding-left: calc(24px + env(safe-area-inset-left));
+    padding-right: calc(24px + env(safe-area-inset-right));
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .notion-selectable {
-  max-width: 100% !important;
 }
 
 .notion-scroller .notion-collection_view-block {
@@ -54,9 +71,9 @@ svg.alias {
 
 /* fixes oversized page properties on Safari */
 .notion-scroller
-  > div:nth-child(2):not(.notion-page-content)
-  > div:not([data-block-id])
-  div:not(.notion-page-details-controls) {
+> div:nth-child(2):not(.notion-page-content)
+> div:not([data-block-id])
+div:not(.notion-page-details-controls) {
   height: auto !important;
 }
 
@@ -115,6 +132,7 @@ a[data-token-index] svg.page {
   .notion-column_list-block > div {
     flex-direction: column;
   }
+
   .notion-column_list-block > div > * {
     width: unset !important;
   }
@@ -128,9 +146,11 @@ a[data-token-index] svg.page {
   .notion-collection-item > a {
     overflow: visible !important;
   }
+
   .notion-collection-item > a > div {
     width: unset !important;
   }
+
   .notion-scroller.horizontal {
     overflow-x: scroll;
   }
@@ -144,9 +164,9 @@ a[data-token-index] svg.page {
   > div:nth-child(2):not(.notion-page-content)
   > div:not([data-block-id])
   div:not(.notion-page-details-controls) {
-  padding-left: 0!important;
-  padding-right: 0!important;
-}
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 .pseudoAfter:after {
@@ -173,4 +193,12 @@ a[data-token-index] svg.page {
   color: var(--pseudoSelection--color);
   background: var(--pseudoSelection--background);
   text-shadow: var(--pseudoSelection--textShadow);
+}
+
+.notion-selectable.notion-table-block {
+  width: 100% !important;
+}
+
+.notion-table-content {
+  padding: 0 !important
 }
