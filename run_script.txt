@@ -1,0 +1,12 @@
+-- (한) 약관
+python loconotion https://mooda.notion.site/085a7d5cfdd14053b17b044f3f4b77d0 --clean --page=ko-terms
+-- (영) 약관
+python loconotion https://mooda.notion.site/Terms-of-Use-14fb944b43f041d8b3ee87bffd118692 --clean --page=en-terms
+-- (한) 개인정보
+python loconotion https://mooda.notion.site/0a2a72510bb84330aff434cbef553ac2 --clean --page=ko-privacy
+-- (영) 개인정보
+python loconotion https://mooda.notion.site/Privacy-Policy-8a967f1833e44048bd65094f670f7cfa --clean --page=en-privacy
+-- (한) FAQ
+python loconotion https://mooda.notion.site/f32ad80a08934e6cafe0f2048ff33b69 --clean --page=ko-faqs
+-- (영) FAQ
+python loconotion https://mooda.notion.site/FAQs-43399dd642dd4728a51994d8f08cbd95 --clean --page=en-faqs
