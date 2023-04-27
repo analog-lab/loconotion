@@ -71,6 +71,10 @@ def get_args():
         help="Run chromedriver in non-headless mode",
     )
     argparser.add_argument(
+        "--page",
+        type=str
+    )
+    argparser.add_argument(
         "-v", "--verbose", action="store_true", help="Increase output log verbosity"
     )
     return argparser.parse_args()

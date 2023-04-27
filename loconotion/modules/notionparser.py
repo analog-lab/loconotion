@@ -50,7 +50,7 @@ class Parser:
         self.index_url = index_url
 
         # set the output folder based on the site name
-        self.dist_folder = Path(config.get("output", Path("dist") / site_name))
+        self.dist_folder = Path(config.get("output", Path("dist") / args.get("page", site_name)))
         log.info(f"Setting output path to '{self.dist_folder}'")
 
         # check if the argument to clean the dist folder was passed
@@ -740,6 +740,8 @@ class Parser:
                 " overwritten. Make sure that your notion pages names or custom slugs"
                 " in the configuration files are unique"
             )
+
+        html_file = self.args.get('page') + ".html"
         log.info(f"Exporting page '{url}' as '{html_file}'")
         with open(self.dist_folder / html_file, "wb") as f:
             f.write(html_str.encode("utf-8").strip())
