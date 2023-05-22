@@ -10,3 +10,12 @@ python loconotion https://mooda.notion.site/Privacy-Policy-8a967f1833e44048bd650
 python loconotion https://mooda.notion.site/f32ad80a08934e6cafe0f2048ff33b69 --clean --page=ko-faqs
 -- (영) FAQ
 python loconotion https://mooda.notion.site/FAQs-43399dd642dd4728a51994d8f08cbd95 --clean --page=en-faqs
+
+-- 변경 내역
+- page parameter 추가 kyeolee89 2023/04/27 8:10 PM
+- CSS 수정 (스크롤, 좌우 여백) kyeolee89 2023/04/27 8:09 PM
+
+-- 실행방법
+- 반영할 페이지 스크립트 실행
+- 결과물로 나온 .html 확장자를 그대로 업로드, 업로드 이후 객체 이름 변경으로 .html 제거
+- 위의 과정에서 content-type이 제대로 들어가 있는지 검토 필요
