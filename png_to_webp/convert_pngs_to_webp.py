@@ -73,7 +73,7 @@ def generate_item_image_query(output_folder):
         elif "_tag@" in filename:
             image_type = 1
         elif "_thumb@" in filename:
-            image_type = 0
+            image_type = 2
 
         print(
             f"INSERT INTO item_image (image_key, image_type, `order`, source_id, original_file_name, image_size, extension, bucket, upload_path, status, created_at, updated_at) VALUES ('{image_key}', {image_type}, {order}, {source_id}, '{filename}', 0.00, 'webp', '{bucket}', '{sticker_name}/{filename}', 'USE', now(), now());")
