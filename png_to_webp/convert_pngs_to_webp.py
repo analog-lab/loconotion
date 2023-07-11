@@ -27,24 +27,22 @@ def convert_pngs_to_webp(input_folder, output_folder):
 
 
 # 변환할 PNG 파일이 있는 폴더 경로
-sticker_name = "y2kAestheticPack_008"
+sticker_name = "habit_007_test"
 input_folder = f"./{sticker_name}"
 
 # WebP로 변환된 파일을 저장할 폴더 경로
 output_folder = input_folder + "_webp"
 
+# output_folder가 없으면 생성
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+else:
+    files = glob.glob(os.path.join(output_folder, "*"))
+    for f in files:
+        os.remove(f)
 
-# # output_folder가 없으면 생성
-# if not os.path.exists(output_folder):
-#     os.makedirs(output_folder)
-# else:
-#     files = glob.glob(os.path.join(output_folder, "*"))
-#     for f in files:
-#         os.remove(f)
-#
-#
-# # PNG를 WebP로 변환
-# convert_pngs_to_webp(input_folder, output_folder)
+# PNG를 WebP로 변환
+convert_pngs_to_webp(input_folder, output_folder)
 
 
 def generate_item_image_query(output_folder):
@@ -59,7 +57,7 @@ def generate_item_image_query(output_folder):
 
     for webp_file in webp_files:
         filename = os.path.basename(webp_file)
-        image_key = filename.split("\\.")[0]
+        image_key = filename.split(".")[0]
         order = "null"
         # _pre_가 포함된 이미지
         if "_pre_" in filename:
