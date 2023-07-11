@@ -27,7 +27,7 @@ def convert_pngs_to_webp(input_folder, output_folder):
 
 
 # 변환할 PNG 파일이 있는 폴더 경로
-sticker_name = "habit_007_test"
+sticker_name = "habit_007"
 input_folder = f"./{sticker_name}"
 
 # WebP로 변환된 파일을 저장할 폴더 경로
@@ -51,6 +51,7 @@ def generate_item_image_query(output_folder):
     # 파일명으로 오름차순 정렬
     webp_files.sort()
     pre_order = 0
+    small_order = 0
     stic_order = 0
     source_id = 10002
     bucket = "dev-mooda-item"
@@ -68,6 +69,10 @@ def generate_item_image_query(output_folder):
             order = stic_order
             stic_order += 1
             image_type = 4
+        elif "_small_" in filename:
+            order = small_order
+            small_order += 1
+            image_type = 5
         elif "_tag@" in filename:
             image_type = 1
         elif "_thumb@" in filename:
