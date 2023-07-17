@@ -27,7 +27,7 @@ def convert_pngs_to_webp(input_folder, output_folder):
 
 
 # 변환할 PNG 파일이 있는 폴더 경로
-sticker_name = "habit_007"
+sticker_name = "hangulOutlineSeal_012"
 input_folder = f"./{sticker_name}"
 
 # WebP로 변환된 파일을 저장할 폴더 경로
@@ -53,7 +53,7 @@ def generate_item_image_query(output_folder):
     pre_order = 0
     small_order = 0
     stic_order = 0
-    source_id = 10007
+    source_id = 10008
     bucket = "dev-mooda-item"
 
     for webp_file in webp_files:
@@ -79,7 +79,7 @@ def generate_item_image_query(output_folder):
             image_type = 2
 
         print(
-            f"INSERT INTO item_image (image_key, image_type, `order`, source_id, original_file_name, image_size, extension, bucket, upload_path, status, created_at, updated_at) VALUES ('{image_key}', {image_type}, {order}, {source_id}, '{filename}', 0.00, 'webp', '{bucket}', '{sticker_name}/{filename}', 'USE', now(), now());")
+            f"INSERT INTO item_image (image_key, image_type, `order`, source_id, original_file_name, image_size, extension, bucket, upload_path, active, status, created_at, updated_at) VALUES ('{image_key}', {image_type}, {order}, {source_id}, '{filename}', 0.00, 'webp', '{bucket}', '{sticker_name}/{filename}', 1, 'USE', now(), now());")
 
 
 generate_item_image_query(output_folder)
