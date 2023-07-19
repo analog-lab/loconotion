@@ -27,7 +27,7 @@ def get_args():
     argparser.add_argument(
         "target",
         help="The config file containing the site properties, or the url"
-        " of the Notion.so page to generate the site from",
+             " of the Notion.so page to generate the site from",
     )
     argparser.add_argument(
         "--chromedriver",
@@ -48,7 +48,7 @@ def get_args():
         type=int,
         default=5,
         help="Time in seconds to wait for the loading of lazy-loaded dynamic elements (default 5)."
-        " If content from the page seems to be missing, try increasing this value",
+             " If content from the page seems to be missing, try increasing this value",
     )
     argparser.add_argument(
         "--clean",
@@ -72,6 +72,10 @@ def get_args():
     )
     argparser.add_argument(
         "--page",
+        type=str
+    )
+    argparser.add_argument(
+        "--key",
         type=str
     )
     argparser.add_argument(

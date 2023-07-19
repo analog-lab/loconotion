@@ -1,15 +1,19 @@
 -- (한) 약관
-python loconotion https://mooda.notion.site/085a7d5cfdd14053b17b044f3f4b77d0 --clean --page=ko-terms
+python loconotion https://mooda.notion.site/085a7d5cfdd14053b17b044f3f4b77d0 --clean --page=ko-terms --key={access-key}
 -- (영) 약관
-python loconotion https://mooda.notion.site/Terms-of-Use-14fb944b43f041d8b3ee87bffd118692 --clean --page=en-terms
+python loconotion https://mooda.notion.site/Terms-of-Use-14fb944b43f041d8b3ee87bffd118692 --clean --page=en-terms --key={access-key}
 -- (한) 개인정보
-python loconotion https://mooda.notion.site/0a2a72510bb84330aff434cbef553ac2 --clean --page=ko-privacy
+python loconotion https://mooda.notion.site/0a2a72510bb84330aff434cbef553ac2 --clean --page=ko-privacy --key={access-key}
 -- (영) 개인정보
-python loconotion https://mooda.notion.site/Privacy-Policy-8a967f1833e44048bd65094f670f7cfa --clean --page=en-privacy
+python loconotion https://mooda.notion.site/Privacy-Policy-8a967f1833e44048bd65094f670f7cfa --clean --page=en-privacy --key={access-key}
 -- (한) FAQ
-python loconotion https://mooda.notion.site/f32ad80a08934e6cafe0f2048ff33b69 --clean --page=ko-faqs
+python loconotion https://mooda.notion.site/f32ad80a08934e6cafe0f2048ff33b69 --clean --page=ko-faqs --key={access-key}
 -- (영) FAQ
-python loconotion https://mooda.notion.site/FAQs-43399dd642dd4728a51994d8f08cbd95 --clean --page=en-faqs
+python loconotion https://mooda.notion.site/FAQs-43399dd642dd4728a51994d8f08cbd95 --clean --page=en-faqs --key={access-key}
+-- (한) 커뮤니티 가이드
+python loconotion https://mooda.notion.site/3779d8000639421db4330643aa6e969d --clean --page=ko-community-guide --key={access-key}
+-- (영) 커뮤니티 가이드
+python loconotion https://mooda.notion.site/Community-Guidelines-c1b058a8bc0b45eeb1502b2e9c2bf128 --clean --page=en-community-guide --key={access-key}
 
 -- 변경 내역
 - page parameter 추가 kyeolee89 2023/04/27 8:10 PM
