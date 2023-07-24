@@ -14,6 +14,18 @@ python loconotion https://mooda.notion.site/FAQs-43399dd642dd4728a51994d8f08cbd9
 python loconotion https://mooda.notion.site/3779d8000639421db4330643aa6e969d --clean --page=ko-community-guide --key={access-key}
 -- (영) 커뮤니티 가이드
 python loconotion https://mooda.notion.site/Community-Guidelines-c1b058a8bc0b45eeb1502b2e9c2bf128 --clean --page=en-community-guide --key={access-key}
+-- (ja) 커뮤니티 가이드
+python loconotion https://mooda.notion.site/44aacad36fa54512abaf217a08e5d292 --clean --page=ja-community-guide --key={access-key}
+-- (th) 커뮤니티 가이드
+python loconotion https://mooda.notion.site/933e1cec751f476fbc23fcabbd995952 --clean --page=th-community-guide --key={access-key}
+-- (zt) 커뮤니티 가이드
+python loconotion https://mooda.notion.site/4d6e864c443d41ca904ad936e50c4b7f --clean --page=th-community-guide --key={access-key}
+-- (zs) 커뮤니티 가이드
+python loconotion https://mooda.notion.site/5b174548a2ed451783ce6f7529edb579 --clean --page=th-community-guide --key={access-key}
+-- (id) 커뮤니티 가이드
+python loconotion https://mooda.notion.site/Panduan-Komunitas-be9f454b05a54a0ebe0aabbb6db3c2ae --clean --page=th-community-guide --key={access-key}
+
+
 
 -- 변경 내역
 - page parameter 추가 kyeolee89 2023/04/27 8:10 PM
