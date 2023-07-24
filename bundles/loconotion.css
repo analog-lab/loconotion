@@ -1,3 +1,17 @@
+/* 배경색 #EFEEE8 고정 지정, 네비게이터 숨김 */
+body {
+  background-color: #EFEEE8 !important;
+}
+
+.notion-topbar {
+  display: none !important;
+}
+
+.notion-frame {
+  background: #EFEEE8 !important;
+  height: 100% !important;
+}
+
 /* enables hover effect on buttons */
 div[role="button"]:not(.notion-record-icon):hover {
   background: rgba(55, 53, 47, 0.08);
