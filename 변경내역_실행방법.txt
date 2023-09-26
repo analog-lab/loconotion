@@ -24,6 +24,10 @@ python loconotion https://mooda.notion.site/4d6e864c443d41ca904ad936e50c4b7f --c
 python loconotion https://mooda.notion.site/5b174548a2ed451783ce6f7529edb579 --clean --page=zs-community-guide --key={access-key}
 -- (id) 커뮤니티 가이드
 python loconotion https://mooda.notion.site/Panduan-Komunitas-be9f454b05a54a0ebe0aabbb6db3c2ae --clean --page=id-community-guide --key={access-key}
+-- (한) 공지사항
+python loconotion https://mooda.notion.site/15aca483507d4197981005b894e86777 --clean --page=ko-notice --key={access-key}
+-- (영) 공지사항
+python loconotion https://mooda.notion.site/Notice-fad497e43d3140cc9b1fcf568318604c --clean --page=en-notice --key={access-key}
 
 
 
