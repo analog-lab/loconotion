@@ -360,7 +360,7 @@ class Parser:
         if len(new_toggle_blocks) > len(toggle_blocks):
             # if so, run the function again
             self.open_toggle_blocks(timeout, opened_toggles)
-        
+
     def _get_title_toggle_blocks(self):
         """Find toggle title blocks via their button element.
         """
@@ -375,7 +375,7 @@ class Parser:
                 if len(toggle_buttons) > 0:
                     title_toggle_blocks.append(block)
         return title_toggle_blocks
-    
+
     def clean_up(self, soup):
         # remove scripts and other tags we don't want / need
         for unwanted in soup.findAll("script"):
@@ -393,7 +393,7 @@ class Parser:
 
         # collection selectors (List, Gallery, etc.) don't work, so remove them
         for collection_selector in soup.findAll(
-            "div", {"class": "notion-collection-view-select"}
+                "div", {"class": "notion-collection-view-select"}
         ):
             collection_selector.decompose()
 
@@ -458,8 +458,8 @@ class Parser:
                 style = cssutils.parseStyle(img["style"])
                 spritesheet = style["background"]
                 spritesheet_url = spritesheet[
-                    spritesheet.find("(") + 1 : spritesheet.find(")")
-                ]
+                                  spritesheet.find("(") + 1: spritesheet.find(")")
+                                  ]
                 cached_spritesheet_url = self.cache_file(
                     f"https://www.notion.so{spritesheet_url}"
                 )
@@ -552,14 +552,14 @@ class Parser:
             for block in title_blocks:
                 if block.select_one("div[role=button]") is not None:
                     title_toggle_blocks.append(block)
-        return title_toggle_blocks 
+        return title_toggle_blocks
 
     def process_table_views(self, soup):
         # if there are any table views in the page, add links to the title rows
         # the link to the row item is equal to its data-block-id without dashes
         for table_view in soup.findAll("div", {"class": "notion-table-view"}):
             for table_row in table_view.findAll(
-                "div", {"class": "notion-collection-item"}
+                    "div", {"class": "notion-collection-item"}
             ):
                 table_row_block_id = table_row["data-block-id"]
                 table_row_href = "/" + table_row_block_id.replace("-", "")
@@ -683,12 +683,12 @@ class Parser:
             sub_page_href = a["href"]
             if sub_page_href.startswith("/"):
                 sub_page_href = (
-                    f'{hrefDomain}/{a["href"].split("/")[len(a["href"].split("/"))-1]}'
+                    f'{hrefDomain}/{a["href"].split("/")[len(a["href"].split("/")) - 1]}'
                 )
                 log.info(f"Got this as href {sub_page_href}")
             if sub_page_href.startswith(hrefDomain):
                 if parse_links or not len(
-                    a.find_parents("div", class_="notion-scroller")
+                        a.find_parents("div", class_="notion-scroller")
                 ):
                     # if the link is an anchor link,
                     # check if the page hasn't already been parsed
@@ -698,8 +698,8 @@ class Parser:
                         a["href"] = f"#{sub_page_href_tokens[-1]}"
                         a["class"] = a.get("class", []) + ["loconotion-anchor-link"]
                         if (
-                            sub_page_href in self.processed_pages.keys()
-                            or sub_page_href in subpages
+                                sub_page_href in self.processed_pages.keys()
+                                or sub_page_href in subpages
                         ):
                             log.debug(
                                 f"Original page for anchor link {sub_page_href}"
