@@ -231,7 +231,7 @@ class Parser:
 
         chrome_options = Options()
         if not self.args.get("non_headless", False):
-            chrome_options.add_argument("--headless")
+            # chrome_options.add_argument("--headless")
             chrome_options.add_argument("window-size=1920,20000")
             chrome_options.add_argument("--no-sandbox")
             chrome_options.add_argument("--disable-dev-shm-usage")
@@ -511,9 +511,9 @@ class Parser:
                             )
                             rule.style["src"] = f"url({cached_font_file})"
                     # commit stylesheet edits to file
-                    f.seek(0)
-                    f.truncate()
-                    f.write(stylesheet.cssText)
+                    # f.seek(0)
+                    # f.truncate()
+                    # f.write(stylesheet.cssText)
 
                 link["href"] = str(cached_css_file)
 
