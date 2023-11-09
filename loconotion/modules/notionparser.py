@@ -500,7 +500,7 @@ class Parser:
                                 p.strip("/")
                                 for p in [
                                     "https://www.notion.so",
-                                    parent_css_path,
+                                    # parent_css_path,
                                     font_file,
                                 ]
                                 if p.strip("/")
@@ -524,7 +524,8 @@ class Parser:
         for toggle_block in toggle_blocks:
             toggle_id = uuid.uuid4()
             toggle_button = toggle_block.select_one("div[role=button]")
-            toggle_content = toggle_block.find("div", {"class": None, "style": ""})
+            toggle_content = toggle_block.find_all('div', recursive=False)[0].find_all('div', recursive=False)[1].find_all('div', recursive=False)[1]
+            # toggle_content = toggle_block.find("div", {"class": None, "style": ""})
             if toggle_button and toggle_content:
                 # add a custom class to the toggle button and content,
                 # plus a custom attribute sharing a unique uiid so
@@ -673,7 +674,7 @@ class Parser:
         custom_script = soup.new_tag(
             "script", type="text/javascript", src=str(loconotion_custom_js)
         )
-        soup.body.insert(-1, custom_script)
+        soup.body.insert(999999999999, custom_script)
 
     def find_subpages(self, url, soup, hrefDomain):
         # find sub-pages and clean slugs / links
@@ -773,3 +774,5 @@ class Parser:
         log.info(
             f"Finished!\n\nProcessed {len(self.processed_pages)} pages in {formatted_time}"
         )
+
+        self.driver.quit()
